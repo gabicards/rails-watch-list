@@ -11,6 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render "movies/header" %>
+    <div class="container mt-5">
+      <%= yield %>
+    </div>
   </body>
 </html>

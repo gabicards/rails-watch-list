@@ -1,0 +1,10 @@
+<h1><%= @list.name %></h1>
+
+<p>Add list of movies here.</p>
+
+  <%= link_to "All lists", lists_path, class: "btn btn-primary" %>
+  <%= link_to "Delete this list",
+    list_path(@list),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class: "btn btn-danger"
+  %>
