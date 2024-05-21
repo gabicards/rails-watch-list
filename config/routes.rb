@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :movies, only: [:index, :show, :new, :create]
+  resources :movies, only: [:index, :show, :new, :create, :destroy]
 
   resources :lists, only: [:index, :show, :new, :create, :destroy] do
     resources :bookmarks, only: [:new, :create]

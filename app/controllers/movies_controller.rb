@@ -1,10 +1,11 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, only: [:show, :destroy]
+
   def index
     @movies = Movie.all
   end
 
   def show
-    @movie = Movie.find(params[:id])
   end
 
   def new
@@ -19,6 +20,11 @@ class MoviesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @movie.destroy
+    redirect_to movies_path, status: :see_other
   end
 
   private

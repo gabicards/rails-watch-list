@@ -3,3 +3,10 @@
 <img src="<%= @movie.poster_url %>" class="rounded float-start" alt="<%= @movie.title %>" style="max-width: 200px; object-fit: cover; margin-right: 20px;">
 
 <p><%= @movie.overview %></p>
+
+  <%= link_to "All movies", movies_path, class: "btn btn-primary" %>
+  <%= link_to "Delete this movie",
+    movie_path(@movie),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class: "btn btn-danger"
+  %>
